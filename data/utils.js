@@ -40,7 +40,7 @@ module.exports = {
     fs.readdirSync("./events")
       .forEach(file => {
         console.log(` > ${file} loaded !`);
-        const event   = require(`../events/${file}`);
+        const event = require(`../events/${file}`);
         let eventName = file.split(".")[0];
         client.on(eventName, event.bind(null, client));
       });
@@ -82,7 +82,7 @@ module.exports = {
    * Returns an Edouard formatted date (lol)
    * @return { string }
    */
-  getDate : () => {
+  getDate: () => {
     const dt = new Date();
     return `${
       (dt.getMonth()+1).toString().padStart(2, '0')}/${
